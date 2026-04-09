@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Fashion Pet – Contact Us</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        .hero {
+            background: url('https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            height: 300px;
+        }
+        .hero-overlay {
+            background: rgba(0,0,0,0.5);
+            height: 100%;
+        }
+        .contact-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .success-box {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="index.html">The Fashion Pet</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="registration.html">Registration</a></li>
+                    <li class="nav-item"><a class="nav-link active fw-bold" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero d-flex align-items-center justify-content-center text-center">
+        <div class="hero-overlay w-100 d-flex align-items-center justify-content-center">
+            <div class="text-white">
+                <h1 class="fw-bold">Contact The Fashion Pet</h1>
+                <p class="lead">We’re here to pamper your pets with love and luxury</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- CONTACT SECTION -->
+    <div class="container my-5">
+
+        <h2 class="text-center fw-bold mb-4">Get in Touch</h2>
+
+        <!-- Success Message -->
+        <div id="successMessage" class="alert alert-success text-center success-box">
+            Your message has been sent! We’ll get back to you shortly.
+        </div>
+
+        <div class="row g-4 justify-content-center">
+
+            <!-- Contact Info -->
+            <div class="col-md-4">
+                <div class="contact-card">
+                    <h4 class="fw-bold mb-3">Contact Information</h4>
+
+                    <p><i class="bi bi-geo-alt-fill text-primary"></i> 123 Pet Lane, Los Angeles, CA</p>
+                    <p><i class="bi bi-telephone-fill text-primary"></i> (555) 987‑6543</p>
+                    <p><i class="bi bi-envelope-fill text-primary"></i> info@thefashionpet.com</p>
+
+                    <h5 class="fw-bold mt-4">Follow Us</h5>
+                    <div class="d-flex gap-3 fs-4">
+                        <a href="#" class="text-primary"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-primary"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="text-primary"><i class="bi bi-twitter"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="col-md-6">
+                <div class="contact-card">
+                    <h4 class="fw-bold mb-3">Send Us a Message</h4>
+
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Your Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Your Message</label>
+                            <textarea id="message" class="form-control" rows="4" required></textarea>
+                        </div>
+
+                        <button class="btn btn-primary w-100" type="submit">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer py-3 bg-dark text-white">
+        <div class="container d-flex justify-content-between align-items-center">
+            <p class="mb-0">&copy; 2025 The Fashion Pet</p>
+            <div>
+                <i class="bi bi-facebook me-3"></i>
+                <i class="bi bi-instagram me-3"></i>
+                <i class="bi bi-twitter"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS -->
+    <script>
+        const form = document.getElementById("contactForm");
+        const successBox = document.getElementById("successMessage");
+
+        form.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Simple form validation
+            const name = document.getElementById("name").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const message = document.getElementById("message").value.trim();
+
+            if (name === "" || email === "" || message === "") {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            // Show success message
+            successBox.style.display = "block";
+
+            // Clear form
+            form.reset();
+
+            // Hide message after 3 seconds
+            setTimeout(() => {
+                successBox.style.display = "none";
+            }, 3000);
+        });
+    </script>
+
+</body>
+</html>
