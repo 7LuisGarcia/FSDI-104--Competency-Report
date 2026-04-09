@@ -1,0 +1,118 @@
+/* GLOBAL */
+body {
+    background-color: #f5f5f5;
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #333;
+}
+
+/* NAVBAR */
+.navbar {
+    padding: 0.8rem 1rem;
+}
+
+.navbar-brand {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #343a40 !important;
+    letter-spacing: 0.5px;
+}
+
+.nav-link {
+    font-weight: 500;
+    margin-left: 10px;
+}
+
+.nav-link.active {
+    color: #0d6efd !important;
+}
+
+/* HERO SECTION */
+.about-hero {
+    background: url('https://images.unsplash.com/photo-1558944351-c6c6d3a6f4b1') center/cover no-repeat;
+    height: 45vh;
+    position: relative;
+    border-bottom: 4px solid rgba(0,0,0,0.2);
+}
+
+.about-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+}
+
+.about-hero > div {
+    position: relative;
+    z-index: 2;
+}
+
+/* ABOUT CARD */
+.about-card {
+    border-radius: 14px;
+    padding: 35px;
+    background: #ffffff;
+    line-height: 1.7;
+    border: 1px solid #e5e5e5;
+}
+
+.about-card h2,
+.about-card h3 {
+    color: #343a40;
+    font-weight: 600;
+}
+
+/* SERVICE CARDS */
+.service-card {
+    background: #ffffff;
+    border-radius: 14px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+/* SERVICE IMAGES */
+.service-img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-img {
+    transform: scale(1.05);
+}
+
+/* SECTION TITLES */
+h2 {
+    color: #343a40;
+    letter-spacing: 0.5px;
+}
+
+/* FOOTER */
+.footer {
+    background-color: #343a40;      /* Dark luxury background */
+    padding: 20px 0;
+    margin-top: 60px;
+}
+
+.footer p {
+    color: #ffffff;
+    margin: 0;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+}
+
+.footer .social-icons a {
+    font-size: 1.4rem;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+    color: #0d6efd;                 /* Luxury blue hover */
+}

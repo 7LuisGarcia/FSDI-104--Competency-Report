@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Salon Registration</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f5f5f5;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        h1, h2 {
+            color: #343a40;
+            font-weight: 700;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .card-header {
+            background-color: #343a40;
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 12px 12px 0 0;
+        }
+
+        table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: #343a40;
+            color: white;
+        }
+
+        td, th {
+            padding: 12px;
+        }
+
+        .delete-btn {
+            background-color: #dc3545;
+            border: none;
+            padding: 6px 12px;
+            color: white;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background-color: #b02a37;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+    <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="index.html">The Fashion Pet</a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">About Us</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link active fw-bold" href="registration.html">Registration</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- PAGE TITLE -->
+<div class="container mt-4">
+    <h1 class="text-center mb-4">Pet Salon Registration</h1>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container">
+    <div class="row g-4">
+
+        <!-- Registration Form -->
+        <div class="col-lg-4">
+            <div class="card">
+                <div class="card-header">Register a New Pet</div>
+                <div class="card-body">
+                    <form id="registration-form" class="d-flex flex-column gap-3">
+
+                        <input type="text" id="pet-name" class="form-control" placeholder="Pet Name" required>
+                        <input type="text" id="pet-service" class="form-control" placeholder="Service" required>
+                        <input type="text" id="pet-species" class="form-control" placeholder="Species" required>
+                        <input type="text" id="pet-breed" class="form-control" placeholder="Breed" required>
+                        <input type="text" id="owner-name" class="form-control" placeholder="Owner Name" required>
+                        <input type="tel" id="owner-phone" class="form-control" placeholder="Owner Phone" required>
+
+                        <button type="submit" class="btn btn-dark w-100">Register Pet</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registered Pets Table -->
+        <div class="col-lg-8">
+            <div class="card">
+                <div class="card-header">Registered Pets</div>
+                <div class="card-body">
+                    <table class="table table-striped" id="pets-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Service</th>
+                                <th>Species</th>
+                                <th>Breed</th>
+                                <th>Owner</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pets-table-body"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- PAYMENT SECTION -->
+<div class="container mt-4 mb-5">
+    <label for="txtPayment" class="fw-bold">Payment Method:</label>
+    <select class="form-control w-25" id="txtPayment">
+        <option value="" disabled selected>Select a method</option>
+        <option value="Card">Card</option>
+        <option value="Cash">Cash</option>
+        <option value="Zelle">Zelle</option>
+    </select>
+</div>
+
+<!-- BOOTSTRAP JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- YOUR JS -->
+<script src="./registration.js"></script>
+
+</body>
+</html>
+
